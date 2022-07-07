@@ -8,31 +8,33 @@
 Структура БД для товаров:
 
 ```
-category ( категории ):
+create table category(
 
-id ( uuid )
-parent_id ( uuid )
-is_deleted ( int )
-name ( string ( 255 ) )
-created_at ( datetime )
-updated_at ( datetime )
-deleted_at ( datetime )
+id  uuid ,
+parent_id  uuid ,
+is_deleted  int ,
+name  varchar( 255 ), 
+created_at  timestamp,
+updated_at  timestamp,
+deleted_at  timestamp
 ```
 
 ```
-product ( товар ):
+create table product 
+(
 
-id ( uuid )
-category_id ( uuid )
-is_deleted ( int )
-name ( string ( 255 ) )
-sku ( string (50) | NULL )
-price ( integer )
-priceSale ( integer | NULL )
-created_at ( datetime )
-updated_at ( datetime )
-deleted_at ( datetime )
-```
+id uuid ,
+category_id  uuid ,
+is_deleted  int ,
+name  varchar ( 255 ) ,
+sku  varchar (50) ,
+price  integer ,
+priceSale  integer ,
+created_at  timestamp ,
+updated_at  timestamp ,
+deleted_at  timestamp 
+
+)
 
 Один товар может находиться в разных категориях
 
